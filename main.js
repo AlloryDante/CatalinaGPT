@@ -13,6 +13,7 @@ global.delay = methods.delay;
 global.getRandomInt = methods.getRandomInt;
 global.ownerID = process.env.OWNER_ID;
 global.knownUsers = {};
+global.connection = null;
 
 global.client = new Client({
 	captchaService: process.env.CAPCHA_PROVIDER,
@@ -30,7 +31,7 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
 
 client.on('messageCreate', async (message) => {
 	if (message.author.bot) return;
-	if (message.author.id == client.user.id) return;
+	if (message.author.id == client.user.id || message.author.id == '1120285943694381156') return;
 	if (message.content.toLowerCase().includes('catty') && message.author.id == ownerID) {
 		let checker = await handleAnalysis(message);
 		if (checker) return;

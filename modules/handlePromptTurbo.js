@@ -97,12 +97,11 @@ Keep messages short.`;
 					console.log(error.response.status);
 					console.log(error.response.data);
 				}
-			} else {
-				console.log(error.message);
-			}
+			} else console.log(error);
 		}
 		await delay(2000);
 	}
+
 	return false;
 }
 module.exports = handlePrompt;

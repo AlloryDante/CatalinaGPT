@@ -3,8 +3,7 @@ const { Readable } = require('stream');
 const { Wit } = require('node-wit');
 const { OpusEncoder } = require('@discordjs/opus');
 
-const witClient = new Wit({ accessToken: process.env.WITHAI_TOKEN });
-global.connection = null;
+//const witClient = new Wit({ accessToken: process.env.WITHAI_TOKEN });
 
 async function handleVoice(newState) {
 	if (newState.member.user.id == ownerID) {
